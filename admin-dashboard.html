@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TravelEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <nav class="sidebar admin-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="admin-users.html"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="admin-buses.html"><i class="fas fa-bus"></i> Buses</a></li>
+                <li><a href="admin-bookings.html"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+                <li><a href="admin-agencies.html"><i class="fas fa-building"></i> Agencies</a></li>
+                <li><a href="admin-reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name" id="adminName">Admin</span>
+                        <span class="user-email" id="adminRole">Administrator</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline" onclick="adminLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Admin Dashboard</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" onclick="refreshData()">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon users">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon buses">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalBuses">0</h3>
+                            <p>Total Buses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bookings">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalBookings">0</h3>
+                            <p>Total Bookings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon agencies">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalAgencies">0</h3>
+                            <p>Total Agencies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <div class="card-header">
+                            <h3>Recent Bookings</h3>
+                            <a href="admin-bookings.html" class="view-all">View All</a>
+                        </div>
+                        <div class="card-content">
+                            <div id="recentBookings" class="recent-list">
+                                <!-- Recent bookings will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <div class="card-header">
+                            <h3>System Status</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="status-list">
+                                <div class="status-item">
+                                    <span class="status-label">Database</span>
+                                    <span class="status-indicator online">Online</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Email Service</span>
+                                    <span class="status-indicator online">Online</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Payment Gateway</span>
+                                    <span class="status-indicator online">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <button class="action-btn" onclick="window.location.href='admin-buses.html'">
+                                <i class="fas fa-plus"></i>
+                                Add New Bus
+                            </button>
+                            <button class="action-btn" onclick="window.location.href='admin-users.html'">
+                                <i class="fas fa-user-plus"></i>
+                                Manage Users
+                            </button>
+                            <button class="action-btn" onclick="sendBulkEmails()">
+                                <i class="fas fa-envelope"></i>
+                                Send Notifications
+                            </button>
+                            <button class="action-btn" onclick="generateReport()">
+                                <i class="fas fa-file-export"></i>
+                                Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>
