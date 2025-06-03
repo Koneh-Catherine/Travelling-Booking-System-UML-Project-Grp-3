@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TravelEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>TravelEase</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="bus-agencies.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="booking-history.html"><i class="fas fa-history"></i> My Bookings</a></li>
+                <li><a href="#"><i class="fas fa-plane"></i> Air</a></li>
+                <li><a href="#"><i class="fas fa-ship"></i> Ship</a></li>
+                <li><a href="#"><i class="fas fa-train"></i> Train</a></li>
+                <li><a href="#"><i class="fas fa-car"></i> Car</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-email">john@example.com</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Welcome to TravelEase</h1>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <section class="transport-options">
+                    <h2>Select Transportation</h2>
+                    <div class="transport-grid">
+                        <div class="transport-card" onclick="selectTransport('bus')">
+                            <i class="fas fa-bus"></i>
+                            <h3>Bus</h3>
+                            <p>Travel comfortably by bus across Cameroon</p>
+                        </div>
+                        <div class="transport-card" onclick="selectTransport('air')">
+                            <i class="fas fa-plane"></i>
+                            <h3>Air</h3>
+                            <p>Fast and convenient air travel</p>
+                        </div>
+                        <div class="transport-card" onclick="selectTransport('ship')">
+                            <i class="fas fa-ship"></i>
+                            <h3>Ship</h3>
+                            <p>Coastal and river transportation</p>
+                        </div>
+                        <div class="transport-card" onclick="selectTransport('train')">
+                            <i class="fas fa-train"></i>
+                            <h3>Train</h3>
+                            <p>Reliable rail transportation</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="popular-agencies">
+                    <h2>Popular Agencies</h2>
+                    <div class="agencies-grid" id="agenciesGrid">
+                        <!-- Agencies will be loaded dynamically -->
+                    </div>
+                </section>
+                
+                <section class="travel-tips">
+                    <h2>Travel Tips</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h3>Plan Ahead</h3>
+                            <p>Book your tickets at least 2-3 days in advance, especially during holidays.</p>
+                        </div>
+                        <div class="tip-card">
+                            <h3>Travel Documents</h3>
+                            <p>Always carry your ID card or passport when traveling between cities.</p>
+                        </div>
+                        <div class="tip-card">
+                            <h3>Arrival Time</h3>
+                            <p>Arrive at least 30 minutes before departure to secure your seat.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

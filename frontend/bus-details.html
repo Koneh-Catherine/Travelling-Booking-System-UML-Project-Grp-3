@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details - TravelEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>TravelEase</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="bus-agencies.html" class="active"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="#"><i class="fas fa-plane"></i> Air</a></li>
+                <li><a href="#"><i class="fas fa-ship"></i> Ship</a></li>
+                <li><a href="#"><i class="fas fa-train"></i> Train</a></li>
+                <li><a href="#"><i class="fas fa-car"></i> Car</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-email">john@example.com</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Bus Details</h1>
+                    <button class="btn btn-outline" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <div class="bus-details-container">
+                    <div class="bus-info" id="busInfo">
+                        <!-- Bus information will be loaded dynamically -->
+                    </div>
+                    
+                    <div class="reservation-sidebar">
+                        <div class="reservation-card" id="reservationCard">
+                            <!-- Reservation form will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/bus-details.js"></script>
+</body>
+</html>

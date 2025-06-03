@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - TravelEase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+        }
+        .ticket-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        .value {
+            color: #333;
+        }
+        .highlight {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎫 Booking Confirmed!</h1>
+        <p>Thank you for choosing TravelEase</p>
+    </div>
+    
+    <div class="content">
+        <p>Dear <strong th:text="${user.name}">Customer</strong>,</p>
+        
+        <p>Your bus ticket has been successfully booked! Here are your booking details:</p>
+        
+        <div class="highlight">
+            <h2>Ticket Number: <span th:text="${booking.ticketNumber}">TKT-12345678</span></h2>
+        </div>
+        
+        <div class="ticket-info">
+            <h3>🚌 Journey Details</h3>
+            <div class="info-row">
+                <span class="label">Route:</span>
+                <span class="value" th:text="${bus.currentLocation + ' → ' + bus.destination}">Douala → Yaoundé</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Bus Number:</span>
+                <span class="value" th:text="${bus.busNumber}">VE-001</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Agency:</span>
+                <span class="value" th:text="${agency.name}">Vatican Express</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Departure Time:</span>
+                <span class="value" th:text="${bus.departureTime}">08:00</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Arrival Time:</span>
+                <span class="value" th:text="${bus.arrivalTime}">18:30</span>
+            </div>
+        </div>
+        
+        <div class="ticket-info">
+            <h3>👤 Passenger Information</h3>
+            <div class="info-row">
+                <span class="label">Name:</span>
+                <span class="value" th:text="${booking.passengerName}">John Doe</span>
+            </div>
+            <div class="info-row">
+                <span class="label">ID Number:</span>
+                <span class="value" th:text="${booking.idNumber}">123456789</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Phone:</span>
+                <span class="value" th:text="${booking.phoneNumber}">+237123456789</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Seat Number:</span>
+                <span class="value" th:text="${booking.seatNumber}">15</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Number of Seats:</span>
+                <span class="value" th:text="${booking.numberOfSeats}">1</span>
+            </div>
+        </div>
+        
+        <div class="ticket-info">
+            <h3>💰 Payment Information</h3>
+            <div class="info-row">
+                <span class="label">Total Amount Paid:</span>
+                <span class="value" th:text="${#numbers.formatDecimal(booking.totalPrice, 0, 'COMMA', 0, 'POINT')} + ' CFA'">5,000 CFA</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Booking Date:</span>
+                <span class="value" th:text="${#temporals.format(booking.bookingDate, 'dd/MM/yyyy HH:mm')}">01/01/2024 10:30</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Status:</span>
+                <span class="value" th:text="${booking.status}">CONFIRMED</span>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <h3>📋 Important Instructions</h3>
+            <ul style="text-align: left; margin: 0; padding-left: 20px;">
+                <li>Please arrive at the station at least 30 minutes before departure</li>
+                <li>Bring a valid ID card for verification</li>
+                <li>Keep this ticket number for your records</li>
+                <li>Contact us if you need to make any changes</li>
+            </ul>
+        </div>
+        
+        <p>If you have any questions or need assistance, please don't hesitate to contact our customer support team.</p>
+        
+        <p>Have a safe and pleasant journey!</p>
+        
+        <p>Best regards,<br>
+        <strong>The TravelEase Team</strong></p>
+    </div>
+    
+    <div class="footer">
+        <p>TravelEase - Your trusted travel partner</p>
+        <p>Email: support@travelease.com | Phone: +237 123 456 789</p>
+        <p>This is an automated email. Please do not reply to this message.</p>
+    </div>
+</body>
+</html>

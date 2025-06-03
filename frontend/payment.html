@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - TravelEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>TravelEase</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="bus-agencies.html" class="active"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="#"><i class="fas fa-plane"></i> Air</a></li>
+                <li><a href="#"><i class="fas fa-ship"></i> Ship</a></li>
+                <li><a href="#"><i class="fas fa-train"></i> Train</a></li>
+                <li><a href="#"><i class="fas fa-car"></i> Car</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Payment</h1>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <div class="payment-container">
+                    <div class="booking-summary" id="bookingSummary">
+                        <!-- Booking summary will be loaded dynamically -->
+                    </div>
+                    
+                    <div class="payment-form">
+                        <h2>Payment Method</h2>
+                        <div class="payment-options">
+                            <div class="payment-option active" onclick="selectPaymentMethod('mtn')">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>MTN Mobile Money</span>
+                            </div>
+                            <div class="payment-option" onclick="selectPaymentMethod('orange')">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Orange Money</span>
+                            </div>
+                        </div>
+                        
+                        <form id="paymentForm" onsubmit="processPayment(event)">
+                            <div class="form-group">
+                                <label for="phoneNumber">Mobile Money Number</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="amount">Amount (CFA)</label>
+                                <input type="number" id="amount" name="amount" readonly>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-credit-card"></i> Pay Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/payment.js"></script>
+</body>
+</html>
