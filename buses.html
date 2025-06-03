@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - Available Buses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">TravelEase</div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">My Bookings</a>
+                <a href="#" class="nav-link">Profile</a>
+                <button class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1 id="agencyName">Vatican Express - Available Buses</h1>
+            <p>Select your preferred bus for your journey</p>
+        </div>
+
+        <div class="buses-list">
+            <div class="bus-card" onclick="selectBus('VE001')">
+                <div class="bus-image">
+                    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=300&h=200&fit=crop" alt="Bus">
+                </div>
+                <div class="bus-details">
+                    <h3>Bus #VE001</h3>
+                    <div class="bus-info">
+                        <span class="seats">🪑 25/50 seats available</span>
+                        <span class="destination">📍 Douala → Yaoundé</span>
+                        <span class="price">💰 3,500 CFA</span>
+                    </div>
+                </div>
+                <div class="bus-status available">Available</div>
+            </div>
+
+            <div class="bus-card" onclick="selectBus('VE002')">
+                <div class="bus-image">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&h=200&fit=crop" alt="Bus">
+                </div>
+                <div class="bus-details">
+                    <h3>Bus #VE002</h3>
+                    <div class="bus-info">
+                        <span class="seats">🪑 10/45 seats available</span>
+                        <span class="destination">📍 Douala → Buea</span>
+                        <span class="price">💰 2,000 CFA</span>
+                    </div>
+                </div>
+                <div class="bus-status available">Available</div>
+            </div>
+
+            <div class="bus-card" onclick="selectBus('VE003')">
+                <div class="bus-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Bus">
+                </div>
+                <div class="bus-details">
+                    <h3>Bus #VE003</h3>
+                    <div class="bus-info">
+                        <span class="seats">🪑 0/40 seats available</span>
+                        <span class="destination">📍 Douala → Bamenda</span>
+                        <span class="price">💰 4,500 CFA</span>
+                    </div>
+                </div>
+                <div class="bus-status full">Fully Booked</div>
+            </div>
+
+            <div class="bus-card" onclick="selectBus('VE004')">
+                <div class="bus-image">
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=300&h=200&fit=crop" alt="Bus">
+                </div>
+                <div class="bus-details">
+                    <h3>Bus #VE004</h3>
+                    <div class="bus-info">
+                        <span class="seats">🪑 35/50 seats available</span>
+                        <span class="destination">📍 Douala → Limbe</span>
+                        <span class="price">💰 1,800 CFA</span>
+                    </div>
+                </div>
+                <div class="bus-status available">Available</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
